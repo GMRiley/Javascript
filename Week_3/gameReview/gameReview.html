@@ -52,19 +52,24 @@
 
      var reviewsBody = document.querySelector('#reviewsBody');
      var str = '<tr><td>';
-     var links = document.getElementsByClassName('col-md04');
+
+     console.log(reviewsBody);
+     console.log(gameTitle);
+
      for (value in reviews)
      {
-         reviewsBody.innerHTML += str;
+         reviewsBody.innerHTML += str + "<a class='review' data-img = '" + reviews[value]["imageName"] + " '>" + reviews[value]["gameTitle"] + "</a>" + '</tr></td>';
      }
+     var links = document.getElementsByClassName('.review');
+      console.log(links);
      function selectReview()
      {
          src += "images/" + this.dataset.img;
-         gameTitle.innerText = this.text;
+         reviews[value]["gameTitle"].innerText = this.text;
      }
      for (value in links)
      {
-        links.addEventListener("selectReview");
+        links[value].addEventListener("click", selectReview);
      }
 
 </script>
