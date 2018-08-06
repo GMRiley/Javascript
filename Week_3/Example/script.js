@@ -19,7 +19,7 @@ function init(e)
     function doStuff(e)
     {
         e.preventDefault();
-        if(input[0].value === "")
+        if(input[0].value == "")
             {
                 input.style.backgroundColor = "red";
             }
