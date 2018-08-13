@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Document</title>
+    </head>
+    <body>
+
+        <p>
+            <!-- Your Name Goes Here -->
+        </p>
+        <script type="text/javascript">
+            fetch('http://ict.neit.edu/evanrense/salaries.php') // Call the fetch function passing the url of the API as a parameter
+            .then(function(data)
+            {
+            // Your code for handling the data you get from the API
+                return data.json();
+            })
+            .then(function(myJson)
+            {
+                  console.log(myJson);
+
+            })
+        </script>
+
+    </body>
+</html>
