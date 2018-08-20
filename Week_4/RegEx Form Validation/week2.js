@@ -19,6 +19,16 @@ function init(e)
     function fieldCheck(e)
     {
         e.preventDefault()
+        var person = 
+            {
+                fname: input[0].value,
+                lname: input[1].value,
+                email: input[2].value,
+                phone: input[4].value
+            }
+        var nameCheck = /^[A-Z\-\ ]{1,}$/i;
+        var phoneCheck = /^[\(]{1}[0-9]{3}[\)]{1}[0-9]{3}[\-]{1}[0-9]{4}$/;
+        var emailCheck = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/;
         for (var counter = 0; counter < p.length; counter ++)
         {
             if(input[counter].value === "")
