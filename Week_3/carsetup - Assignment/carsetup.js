@@ -70,7 +70,7 @@ function animate()
 		//set the car's front and rear tires' radius properties equal to the ft and rt slider's values
 		car["ft","rt"] 
 		//create a variable called wd and assign the wheelDistance slider's value to it as a Number.
-		var wd = Number(wheelDistance.value);
+		
 		//set the car's front tire's x property equal to the center plus wd.
 		
 		//set the car's rear tire's x property equal to the center minus wd.

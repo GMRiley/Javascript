@@ -48,20 +48,7 @@ function showCalendar (mth, yr) {
               str += value;
               str += "</div>";
           }
-    for (value = (numberOfDaysInMonth + firstDayOfWeek); value < 35; value ++ )
-        {
-            str += "<div class='day' >" ;
-            str += "</div>";
-        }
-    function onOff()
-    {
-        if( this.style.backgroundColor == "white")
-            this.style.backgroundColor = "green";
-        else if(this.style.backgroundColor == "green")
-            this.style.backgroundColor = "red";
-        else
-            this.style.backgroundColor = "white";
-    }
+
 
     str += "<ul>";
     str += "<li>Number of days in the month: " + numberOfDaysInMonth + "</li>";
@@ -70,12 +57,7 @@ function showCalendar (mth, yr) {
     str += "</ul>";
 
     document.querySelector("#results").innerHTML = str;
-    var colorChange = document.querySelectorAll(".day")
-    for( value = 0; value< 35; value++)
-        {
-            colorChange[value].addEventListener("click", onOff);
-        }
-     console.log(colorChange);
+
 
 
 }

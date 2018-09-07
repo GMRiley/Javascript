@@ -23,27 +23,27 @@
 		{first:"Buzz", last:"Lightyear", credit:"Toy Story" },
 		{first:"Marion", last:"Cobretti", credit:"Cobra" }
 	];
-    
+
     for ( i = 0; i<6; i++)
     {
-        
+
         let tempDiv = document.createElement('div');
         let tempP;
         tempDiv.setAttribute("id", String(i));
         tempP = document.createElement('p');
         tempP.appendChild( document.createTextNode(people[i].first) );
         tempDiv.appendChild(tempP);
-        
+
         tempP = document.createElement('p');
         tempP.appendChild( document.createTextNode(people[i].last) );
         tempDiv.appendChild(tempP);
-        
+
         tempP = document.createElement('p');
         tempP.appendChild( document.createTextNode(people[i].credit) );
         tempDiv.appendChild(tempP);
-        
+
         document.body.appendChild(tempDiv);
-        
+
         tempDiv.className = "border";
     }
 </script>

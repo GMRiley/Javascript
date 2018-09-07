@@ -26,7 +26,7 @@
     body = document.getElementsByTagName('body');
     var str = "";
     console.log(body);
-    console.log(people)
+
     for (value in people)
     {
         str += "<div id='" + value + "' class ='border'>";
@@ -36,9 +36,9 @@
                 str += people[value][i];
                 str += "</p>";
             }
-        
+
         str += "</div>"
-        
+
     }
     body[0].innerHTML = str;
 </script>
