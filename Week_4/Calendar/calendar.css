@@ -1,11 +1,11 @@
 .main {margin-left:50px; margin-top:50px;}
-#weekHeader {margin-left:50px; margin-top:50px; clear: left; margin-bottom: 10px; border: 1px red; height: 40px;}
+#weekHeader {margin-left:50px; margin-top:50px; clear: left; margin-bottom: 10px; border: 1px red; height: 40px; width: 800px;}
 
 
-.day  { margin-bottom: 4px; height: 50px; width: 100px; border: 1px solid; float: left; margin-left:5px;text-align: center; vertical-align: middle; line-height: 50px;}
+.day  { margin-bottom: 4px; height: 50px; width: 100px; border: 1px solid; float: left; margin-left:5px;text-align: center; vertical-align: middle; line-height: 50px; background-color: "white"}
 .row {clear: left; margin-top:4px;}
 .dayHeader {height: 30px; width: 100px; border: 1px solid; float: left; margin-left:5px; font-weight: bold;}
-#results {clear: both; margin-left:50px; height: 250px;}
+#results {clear: both; margin-left:50px; height: 250px; width: 800px;}
 input[type=button] {width: 200px; height: 40px;}
 
 .footer-btn {

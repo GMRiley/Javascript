@@ -57,6 +57,42 @@ function showCalendar (mth, yr) {
     str += "</ul>";
 
     document.querySelector("#results").innerHTML = str;
+    var day = document.querySelectorAll(".day")
+    console.log(day)
+    for (var i=0; i < day.length; i++)
+    {
+        day[i].addEventListener("click",colorChange)
+    }
+    document.querySelector('input[value="All Month Available"]').addEventListener("click",function(){monthYes(day)})
+    document.querySelector('input[value="All Month UnAvailable"]').addEventListener("click",function(){monthNo(day)})
+
+
+    function colorChange()
+    {
+        console.log(this.style.backgroundColor)
+        if (this.style.backgroundColor == "")
+            this.style.backgroundColor = "green"
+        else if (this.style.backgroundColor == "green")
+            this.style.backgroundColor = "red"
+        else if (this.style.backgroundColor == "red")
+            this.style.backgroundColor = ""
+
+    }
+    function monthYes(arr)
+    {
+        for (var i=0; i < arr.length; i++)
+        {
+            arr[i].style.backgroundColor = "green";
+        }
+    }
+    function monthNo(arr)
+    {
+        for (var i=0; i < arr.length; i++)
+        {
+            arr[i].style.backgroundColor = "red";
+        }
+    }
+
 
 
 
