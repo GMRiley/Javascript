@@ -32,6 +32,12 @@ function init(e)
                 span[counter].innerHTML = "*";
                 span[counter].style.color = "red";
             }
+            else
+            {
+                p[counter].style.color = "black";
+                span[counter].innerHTML = "";
+                span[counter].style.color = "black";
+            }
         }
         if (checker != nameCheck.test(input[0].value))
         {

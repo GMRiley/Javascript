@@ -8,45 +8,72 @@ var box = new GameObject();
 box.vx = 5;
 
 //create an array of boxes
-var s =[];
-for(var i=0; i<4; i++)
-{
-    s[i]=new GameObject();
-    s[i].x = canvas.width/2;//Math.random()*canvas.width;
-    s[i].y = canvas.height/2;//Math.random()* canvas.height;
-    s[i].vy = Math.round(Math.random()*10+-5);
-    s[i].vx = Math.round(Math.random()*10+-5);
-    s[i].w =  10;
-    s[i].h =  10;
-}
+
 
 //functions to run the examples
-var examples = [];
-
+var states = [];
+var currentState='yes';
 //one box
-examples[0]= function()
-{ 
-        if(box.x > canvas.width-box.w/2)
-        {
-            box.vx = -box.vx;
-        }
-        if(box.x < 0 + box.w/2)
-        {
-            box.vx = -box.vx;
-        }
-    
-        box.move();
-        box.drawRect();
-    };
+
+var s =[];
 
 //multiple boxes
-examples[1]= function()
+function squares()
+{
+    var shapeNum = document.querySelector("#object-num").value
+
+    console.log(shapeNum)
+    for(var i=0; i<Number(shapeNum); i++)
+    {
+        s[i]=new GameObject();
+        s[i].x = canvas.width/2;//Math.random()*canvas.width;
+        s[i].y = canvas.height/2;//Math.random()* canvas.height;
+        s[i].vy = Math.round(Math.random()*10+-5);
+        s[i].vx = Math.round(Math.random()*10+-5);
+        s[i].w =  20;
+        s[i].h =  20;
+    } 
+}
+states["squares"]=function()
 {
     for(i = 0; i < s.length; i++)
     {
        /*s[i].vy = Math.random()*2+-1;
        s[i].vx = Math.random()*2+-1;*/
+        
         s[i].drawRect();
+        s[i].move();
+        if(s[i].y > canvas.height)
+        {
+            s[i].y = canvas.height;
+            s[i].vy = -s[i].vy;
+        }
+        if(s[i].y < -s[i].w/2)
+        {
+            s[i].y = s[i].w/2;
+            s[i].vy = -s[i].vy
+        }
+        if(s[i].x > canvas.width)
+        {
+            s[i].vx = -s[i].vx;
+            s[i].x = canvas.width;
+        }
+        if(s[i].x < s[i].w/2)
+        {
+            s[i].vx = -s[i].vx;
+            s[i].x = s[i].w/2;
+        }
+    }
+    
+};
+states["circles"]=function()
+{
+    for(i = 0; i < s.length; i++)
+    {
+       /*s[i].vy = Math.random()*2+-1;
+       s[i].vx = Math.random()*2+-1;*/
+        
+        s[i].drawCirc();
         s[i].move();
         if(s[i].y > canvas.height)
         {
@@ -69,14 +96,18 @@ examples[1]= function()
             s[i].x = 0;
         }
     }
-};
-
-
+}
+states["yes"]=function()
+{
+    
+}
+document.querySelector("#submit-button").addEventListener("click", squares)
+document.querySelector("#Square-choice").addEventListener("click", function(){currentState="squares"})
+document.querySelector("#Circle-choice").addEventListener("click", function(){currentState="circles"})
 
 function main()
 {
     ctx.clearRect(0,0,canvas.width, canvas.height);
-    var objectNum = 4;
-    examples[1]();
-    document.querySelector("")
+    states[currentState]();
+    
 }
