@@ -1,0 +1,9 @@
+{
+    "name": "Software_Security_Application",
+    "version": "1.0.0",
+    "dependencies": {
+        "knex": "^0.16.5",
+        "bootstrap": "^4.3.1",
+        "bcrypt": "^3.0.6"
+    }
+}
