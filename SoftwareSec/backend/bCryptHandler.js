@@ -1,6 +1,5 @@
 const bcrypt = require('bcrypt');
 const saltRounds = 10;
-var test = "egg";
 
 const hashGen = async (password) => {
     return bcrypt.hash(password, saltRounds);
