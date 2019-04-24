@@ -32,7 +32,7 @@ app.post('/login', function(req, res){
     }
 });
 module.exports = {
-    createUser ({LoginName, PasswordHash, FirstName, LastName, Email}) {
+    createUser ({...user}) {
         console.log("Api call createUser");
         return Promise.resolve();
     }
